@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --clr-primary: hsl(7.4 45% 28%);
+  --clr-secondary: hsl(96 9% 33%);
+  --clr-accent: #80877b;
+  --ff-primary: "Inter", sans-serif;
+  --ff-header: "IBM Plex Sans", sans-serif;
+  --fw-norm: 400;
+  --fw-bold: 700;
+  --fw-vbold: 900;
+  --fs-small: 1rem;
+  --fs-medium: 1.5rem;
+  --fs-large: 2rem;
+  --fs-xlarge: 3rem;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Utility Classes */
+/*Color Classes*/
+.tpc-prim {
+  color: var(--clr-primary);
+}
+
+.tpc-sec {
+  color: var(--clr-secondary);
+}
+.tpc-acc {
+  color: var(--clr-accent);
+}
+
+.bg-primary {
+  background-color: var(--clr-primary);
+}
+
+.bg-secondary {
+  background-color: var(--clr-secondary);
+}
+.bg-accent {
+  background-color: var(--clr-accent);
+}
+/*Color Classes*/
+
+
+/* Font Classes*/ 
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-norm {
+  font-weight: var(--fw-norm);
+}
+.fw-vbold {
+  font-weight: var(--fw-vbold);
+}
+.fs-small {
+  font-size: var(--fs-small);
+}
+.fs-medium {
+  font-size: var(--fs-medium);
+}
+.fs-large {
+  font-size: var(--fs-large);
+}
+.fs-xlarge {
+  font-size: var(--fs-xlarge);
+}
+/* Font Classes*/
+/* Utility Classes */
+
+
+/* Flex/Grid Classes*/
+.even-column { 
+    display: grid;
+   grid-template-columns:  300px 1fr;
+   grid-auto-rows: column;
+   gap: 1em;
+}
+
+.row-flex {
+ display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+/* Flex/Grid Classes*/
+
+/*Card Styles*/ 
+.card {
+  border: 1px solid var(--clr-accent);
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
