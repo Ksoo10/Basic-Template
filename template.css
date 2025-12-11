@@ -15,6 +15,7 @@
   --fs-xlarge: 3rem;
 }
 
+
 /* Box sizing rules */
 *,
 *::before,
@@ -31,6 +32,7 @@
 html,
 body {
   height: 100%;
+  interpolate-size: allow-keywords;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -71,6 +73,21 @@ textarea,
 select {
   font: inherit;
 }
+
+p {
+margin-bottom: .75rem;
+padding-top: 1rem;
+padding-bottom: 1rem;
+font-size: 16px;
+font-weight: 400;
+font-family: var(--ff-primary);
+}
+
+section {
+    margin-bottom: .75rem;
+    padding:10px;
+}
+
 
 /* Utility Classes */
 /*Color Classes*/
@@ -127,25 +144,167 @@ select {
 
 /* Flex/Grid Classes*/
 .even-column { 
-    display: grid;
-   grid-template-columns:  300px 1fr;
-   grid-auto-rows: column;
-   gap: 1em;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 10px;
+justify-content: center;
 }
 
 .row-flex {
  display: flex;
     flex-direction: row;
-    gap: 1em;
+    gap: 1rem;
+    justify-content: center;
+    align-content: center;
+    padding: 1rem;
+    margin: .75rem 0;
 }
 
+@media (width <= 1250px) {
+ .even-column, .row-flex { 
+ display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+}
 /* Flex/Grid Classes*/
+
 
 /*Card Styles*/ 
 .card {
   border: 1px solid var(--clr-accent);
   border-radius: 8px;
   padding: 1em;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
+-moz-box-shadow: 3px 3px 10px 3px #dddddd;
+box-shadow: 3px 3px 10px 3px #dddddd;
   background-color: #fff;
+  max-width: 400px;
+}
+
+.card-title {
+  font-family: var(--ff-header);
+  font-weight: var(--fw-vbold);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--clr-primary);
+}
+
+.card-text {
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-norm);
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+} 
+/*Card Styles*/ 
+
+/* Carousel Styles */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  gap: 4vw;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel__slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+}
+/* Carousel Styles */
+
+/* Accordion Styles */
+.detail-wrapper {
+  max-width: 600px;
+  padding: 1rem;
+  margin: 0 auto;
+  background-color: var(--clr-secondary);
+  border-radius: 10px;
+  
+}
+
+details {
+  border: 1px solid var(--clr-accent);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color:white;
+}
+
+details::details-content {  
+  overflow: hidden;
+  height: 0;  
+   /* Enable transitioning of `content-visibility` */
+  transition: height 0.3s, content-visibility 0.3s;  
+  transition-behavior: allow-discrete;
+}
+
+details[open]::details-content {
+  height: auto;
+}
+summary
+{
+  font-family: var(--ff-header);
+  font-weight: var(--fw-bold);
+  font-size: 1.1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+
+.description {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-norm);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+  padding: 1rem;
+border: 10px solid #f0f0f0;
+}
+
+
+/* Chromium / Firefox */
+details summary {
+  /* Either remove the list style ... */
+  list-style: none;
+}
+
+/* Webkit */
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-in;
+}
+
+
+/* Accordion Styles */
+
+/*Keyframe Animations*/
+@keyframes slide-in {
+  from {
+    transform: translatey(0%);
+  }
+
+  to {
+    transform: translatey(100%);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
